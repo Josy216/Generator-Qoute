@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genarate Qoute</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .cont{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #B5C3AD;
+            backdrop-filter: blur(25px);
+        }
+        .box{
+            width: 70%;
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            line-height: 25px;
+        }
+        button{
+            margin: 15px;
+            background-color: fuchsia;
+            padding: 15px;
+            border: 0;
+            outline: 0;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        p{
+            text-transform: uppercase;
+            font-weight: 400;
+            font-family: cursive , sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <div class="box">
+            <div>
+                <p id="demo">QOUTE</p>
+                <p id="demo1">"BY : "</p>
+                <button onclick="qouteGenerator()">Genarate Qoute</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function qouteGenerator(){
+            let qoutes = {
+                "Joseph Teka" : "stay small long enough and you will be big enough soon enough.",
+                "me":"I am not the one you choose I am the one you wish",
+                "him":"life get better when you choose to be silent anyway",
+                "Josa the Great": "If you planned to be yourself Gods plan really exist in yours.",
+                "mindset": `who is better than me? ${"<br/>"} do you mean nobody?`,
+                "proverb":"You realize what you think and deserve what you do.",
+                "unknown":"I took as an example a successful people stories to my readers to be next example of my next book.",
+                "proverb": "Each experience in life modifies your self-image",
+                "people":"If you want better results, then forget about setting goals. Focus on your system instead."
+            }
+            let index = 0;
+            let authors = Object.keys(qoutes);
+            let author = authors[Math.floor(Math.random()*authors.length)];
+            if(index < qoutes.length - 1)
+            index = 0;
+            let qoute = qoutes[author];
+            document.getElementById("demo").innerHTML = qoute;
+            document.getElementById("demo1").innerHTML = `"By : ${author}"`;
+        }
+    </script>
+</body>
+</html>
